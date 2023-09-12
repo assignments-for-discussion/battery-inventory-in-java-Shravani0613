@@ -6,9 +6,20 @@ public class Main {
     public int exchange = 0;
     public int failed = 0;
   };
-
+  
   static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {
     CountsBySoH counts = new CountsBySoH();
+    int ratedCapacity = 120;
+        for (int presentCapacity : presentCapacities) {
+            double soh = (presentCapacity / (double) ratedCapacity) * 100;
+            if (soh > 80) {
+                counts.healthy++;
+            } else if (soh >= 63 && soh <= 80) {
+                counts.exchange++;
+            } else {
+                counts.failed++;
+            }
+        }
     return counts;
   }
 
@@ -20,6 +31,9 @@ public class Main {
     assert(counts.exchange == 3);
     assert(counts.failed == 1);
     System.out.println("Done counting :)\n");
+    System.out.println("Number of Healthy Batteries: " + counts.healthy);
+    System.out.println("Number of Exchange Batteries: " + counts.exchange);
+    System.out.println("Number of Failed Batteries: " + counts.failed);
   }
 
   public static void main(String[] args) {
