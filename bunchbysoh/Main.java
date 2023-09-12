@@ -6,7 +6,7 @@ public class Main {
     public int exchange = 0;
     public int failed = 0;
   };
-
+  
   static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {
     CountsBySoH counts = new CountsBySoH();
     int ratedCapacity = 120;
