@@ -31,9 +31,9 @@ public class Main {
     assert(counts.exchange == 3);
     assert(counts.failed == 1);
     System.out.println("Done counting :)\n");
-    System.out.println("Healthy Batteries: " + counts.healthy);
-    System.out.println("Exchange Batteries: " + counts.exchange);
-    System.out.println("Failed Batteries: " + counts.failed);
+    System.out.println("Number of Healthy Batteries: " + counts.healthy);
+    System.out.println("Number of Exchange Batteries: " + counts.exchange);
+    System.out.println("Number of Failed Batteries: " + counts.failed);
   }
 
   public static void main(String[] args) {
